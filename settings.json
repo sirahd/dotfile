@@ -1,0 +1,22 @@
+{
+    "window.zoomLevel": 1,
+    "editor.tabSize": 2,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "search.exclude": {
+        "**/tmp": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "markdown.preview.scrollPreviewWithEditorSelection": false,
+    "markdown.preview.scrollEditorWithPreview": false,
+    "terminal.external.osxExec": "iTerm.app"
+}
