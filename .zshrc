@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,6 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
+# A
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
@@ -85,5 +86,27 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi=vim
 alias killdock='killal -KILL Dock'
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ============================ Theme ===========================================
+# Set the colors to your liking
+local vi_normal_marker="%{$fg[green]%}%BN%b%{$reset_color%}"
+local vi_insert_marker="%{$fg[cyan]%}%BI%b%{$reset_color%}"
+local vi_unknown_marker="%{$fg[red]%}%BU%b%{$reset_color%}"
+local vi_mode="$vi_insert_marker"
+vi_mode_indicator () {
+  case ${KEYMAP} in
+      (vicmd)      echo $vi_normal_marker ;;
+
+  esac
+}
+
+# Reset mode-marker and prompt whenever the keymap changes
+function zle-line-init zle-keymap-select {
+    vi_mode="$(vi_mode_indicator)"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+export MODE_INDICATOR="[INSERT]"
