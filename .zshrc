@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/horradarn/.oh-my-zsh
+export ZSH=/Users/piyanuchhorradarn/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -87,6 +87,9 @@ source $ZSH/oh-my-zsh.sh
 alias vi=vim
 alias killdock='killal -KILL Dock'
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias vega="cd ~ && cd Google\ Drive/Vega-lite"
+jcar() { javac $1.java && java $1 $2 }
+alias matlab="/Applications/MATLAB_R2014b.app/bin/matlab -nodesktop"
 
 # ============================ Theme ===========================================
 # Set the colors to your liking

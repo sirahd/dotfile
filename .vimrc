@@ -143,6 +143,8 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" set clipboard
+set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
